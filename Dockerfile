@@ -22,6 +22,11 @@ RUN adduser -D pokemon
 # Set working directory
 WORKDIR /app
 
+# Update package repositories and install Chromium and Chromedriver
+RUN apk add --update --no-cache \
+    chromium \
+    chromium-chromedriver
+
 # Install runtime dependencies
 RUN apk add --no-cache \
     curl
@@ -48,7 +53,9 @@ EXPOSE 8000
 
 # Set environment variables
 ENV HOST=0.0.0.0 \
-    PORT=8000
+    PORT=8000 \
+    CHROMEDRIVER_PATH=/usr/bin/chromedriver \
+    PATH="/usr/bin/chromedriver:${PATH}"
 
 # Run the application
 CMD ["python", "main.py"]

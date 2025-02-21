@@ -10,6 +10,6 @@ class Pokemon(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String, unique=True)
     types = Column(String)
-    height = Column(Integer)
-    weight = Column(Integer)
+    height = Column(String)
+    weight = Column(String)
     abilities = Column(String)

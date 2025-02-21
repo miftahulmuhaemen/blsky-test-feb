@@ -1,10 +1,10 @@
 # Pokemon API Scraper
 
-A Python application that scrapes Pokemon data and provides a JSON:API compliant REST API. The application scrapes Pokemon data from PokeAPI and stores it in a local database, making it available through a REST API.
+A Python application that scrapes Pokemon data and provides a JSON:API compliant REST API. The application scrapes Pokemon data from pokemondb.net and stores it in a local database, making it available through a REST API.
 
 ## Features
 
-- Scrapes Pokemon data from PokeAPI
+- Scrapes Pokemon data from pokemondb.net
 - Stores data in local SQLite database
 - Provides REST API endpoints following JSON:API specification
 
@@ -61,7 +61,11 @@ pytest --cov=src tests/
 docker-compose up
 ```
 
-# API ENDPOINTS
+# Notes
+
+As of now, sometime driver Chrome causing timeout.
+
+# Docs
 
 1. Via Swagger, http://localhost:8000/docs
 2. Via ReDoc, http://localhost:8000/redoc
