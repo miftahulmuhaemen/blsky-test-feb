@@ -17,7 +17,7 @@ A Python application that scrapes Pokemon data and provides a JSON:API compliant
 
 1. Clone the repository
 ```bash
-git clone https://github.com/miftahulmuhaemen/pokemon-scraper.git
+git clone https://github.com/miftahulmuhaemen/blsky-test-feb.git
 cd pokemon-scraper
 ```
 
@@ -40,7 +40,29 @@ python main.py
 
 The application will initialize the database, scrape Pokemon data, and start the API server on http://localhost:8000
 
+# Test
+
+1. Install dependencies
+```bash
+pip install -r requirements-test.txt
+```
+
+2. To run the test
+```bash
+pytest
+```
+or
+```bash
+pytest --cov=src tests/
+```
+
+# Build and Deploy on Docker
+```bash
+docker-compose up
+```
+
 # API ENDPOINTS
+
 1. Via Swagger, http://localhost:8000/docs
 2. Via ReDoc, http://localhost:8000/redoc
 
@@ -49,11 +71,18 @@ The application will initialize the database, scrape Pokemon data, and start the
 pokemon-scraper/
 ├── README.md
 ├── requirements.txt
+├── requirements-test.txt
+├── tests/
+│   ├── __init__.py
+│   ├── test_scraper.py
+│   ├── test_api.py
 ├── src/
 │   ├── __init__.py
 │   ├── scraper.py
 │   ├── database.py
 │   ├── api.py
 │   └── models.py
+├── docker-compose.yml
+├── Dockerfile
 └── main.py
 ```
